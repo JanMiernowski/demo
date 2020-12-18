@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Car} from "../models/Car";
 import {ClientService} from "./services/client.service";
+import {HttpClient} from "@angular/common/http";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -11,7 +13,7 @@ export class AppComponent implements OnInit{
   title = 'demo-angular';
   car = {name: "", year: 0};
 
-  constructor(private service: ClientService) {
+  constructor(private service: ClientService, private router: Router) {
   }
 
   ngOnInit(): void {
